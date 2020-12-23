@@ -10,7 +10,6 @@ class Breast_data(data.Dataset):
     def __init__(self,data_set,data_label,length,mode):
         self.length=length
         self.data_set = data_set
-        # self.data_set=data_set.transpose(1,0)
         self.data_label=data_label
         self.mode=mode
         self.data_set_att=np.shape(self.data_set)[1]
@@ -39,13 +38,6 @@ class Breast_net(nn.Module):
         for i in range(len(self.mlp)):
             pre_label=F.relu(self.mlp[i](pre_label))
         pre_label=self.Linear(pre_label)
-        # pre_label=F.sigmoid(pre_label)
-        # for i in range(10):
-        #     if pre_label[i]<0.5:
-        #         pre_label[i]=2
-        #     else:
-        #         pre_label[i]=4
-
         return pre_label
 # class Breast_net(torch.nn.Module):
 #     def __init__(self, n_feature, n_hidden, n_output, dropout=0.5):
