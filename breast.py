@@ -47,45 +47,7 @@ class Breast_net(nn.Module):
         #         pre_label[i]=4
 
         return pre_label
-# class Breast_net(torch.nn.Module):
-#     def __init__(self, n_feature, n_hidden, n_output, dropout=0.5):
-#         super(Breast_net, self).__init__()
-#         self.dropout = torch.nn.Dropout(dropout)
-#
-#         self.hidden_1 = torch.nn.Linear(n_feature, n_hidden)  # hidden layer
-#         self.bn1 = torch.nn.BatchNorm1d(n_hidden)
-#
-#         self.hidden_2 = torch.nn.Linear(n_hidden, n_hidden//2)
-#         self.bn2 = torch.nn.BatchNorm1d(n_hidden//2)
-#
-#         self.hidden_3 = torch.nn.Linear(n_hidden//2, n_hidden//4)  # hidden layer
-#         self.bn3 = torch.nn.BatchNorm1d(n_hidden//4)
-#
-#         self.hidden_4 = torch.nn.Linear(n_hidden // 4, n_hidden // 8)  # hidden layer
-#         self.bn4 = torch.nn.BatchNorm1d(n_hidden // 8)
-#
-#         self.out = torch.nn.Linear(n_hidden//8, n_output)  # output layer
-#
-#         self.hidden=torch.nn.Linear(10,30)
-#         self.outt=torch.nn.Linear(30,1)
-#
-#     def forward(self, x):
-#         # print(x.shape)
-#         # x=x.view(10,1,10)
-#
-#         x = F.relu(self.hidden_1(x))  # activation function for hidden layer
-#         x = self.dropout(self.bn1(x))
-#         x = F.relu(self.hidden_2(x))  # activation function for hidden layer
-#         x = self.dropout(self.bn2(x))
-#         x = F.relu(self.hidden_3(x))  # activation function for hidden layer
-#         x = self.dropout(self.bn3(x))
-#         x = F.relu(self.hidden_4(x))  # activation function for hidden layer
-#         x = self.dropout(self.bn4(x))
-#         # x = F.sigmoid(self.out(x))
-#         x = self.out(x)
-#         # x=F.relu(self.hidden(x))
-#         # x=F.sigmoid(self.outt(x))
-#         return x
+
 class Loss(nn.Module):
     def __init__(self):
         super(Loss,self).__init__()
