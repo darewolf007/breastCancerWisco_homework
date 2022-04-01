@@ -1,2 +1,2 @@
 # breastCancerWisco_homework
-This is TJU homework using pytorch with python3
+This is TJU homework using pytorch & python3
